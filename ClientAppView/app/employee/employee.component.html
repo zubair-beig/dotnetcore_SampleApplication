@@ -1,0 +1,29 @@
+<div class="Employee row well">
+  <form  class="emp-form" #employeeForm="ngForm" id="form-validate" (ngSubmit)="onSubmit(employeeForm)">
+    <input type="hidden" name="id" id="id" #id="ngModel" [(ngModel)]="employeeService.selectedEmployee.id" />
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" id="firstname" name="firstName" #firstName="ngModel" [(ngModel)]="employeeService.selectedEmployee.firstName" placeholder="First Name">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="lastname">LastName</label>
+        <input type="text" class="form-control" id="lastname" name="lastName" #lastName="ngModel" [(ngModel)]="employeeService.selectedEmployee.lastName" placeholder="LastName">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="txtDescription">Description</label>
+        <textarea name="Description" class="form-control" id="txtDescription" name="description" #description="ngModel" [(ngModel)]="employeeService.selectedEmployee.description"  placeholder="Description" cols="4" rows="4">
+          </textarea>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary" >Submit</button>
+      <button type="button" class="btn btn-primary" (click)="resetForm(employeeForm)" >Reset</button>
+    </div>
+  </form>
+
+
+
+</div>
